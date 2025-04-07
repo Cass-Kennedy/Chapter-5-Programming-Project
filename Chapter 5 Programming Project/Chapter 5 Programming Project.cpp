@@ -1,20 +1,29 @@
-// Chapter 5 Programming Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// This program is a rudimentary way to calculate the expected population after a certain number of days.
 
 #include <iostream>
-
+#include <iomanip>
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+    float populationCount, days, avgGrowth; //Starting population, amount of time, and average growth rate for the organisms
+    cout << "How many organisms are in the original population? ";
+    cin >> populationCount;
+    cout << "What is the average rate of growth for the organisms as a percentage? ";
+    cin >> avgGrowth;
+    cout << "How many days does this group grow? ";
+    cin >> days;
+    if (avgGrowth > 0 && avgGrowth < 1)
+    {
+        avgGrowth += 1;
+    };
+    if (populationCount < 2 || days < 1 || avgGrowth < 0) {
+        cout << "Please enter a valid population, time, and growth rate.";
+    }
+    else {
+        for (int i = 0; i <= days; i++) {
+            cout << " The population on day " << i << " is " << populationCount << endl;
+            populationCount *= avgGrowth;
+        };
+    } 
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
