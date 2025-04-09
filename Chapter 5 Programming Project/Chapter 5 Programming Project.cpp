@@ -4,26 +4,28 @@
 using namespace std;
 int main()
 {   
-    int i = 0;
-    while (i <= 9) 
+    int i = 0; //Sets the start of the loop.
+    while (i <= 9) //Sets the end of the loop.
     {
-        for (int counter = 0; counter <= i; counter++)
+        // Runs a number of times based on how many times the process has happened before. Increases the size of subsequent rows.
+        for (int counter = 0; counter <= i; counter++) 
         {
-            cout << "+";
+            cout << "+"; //Writes a pip each time.
         };
-        cout << endl;
-        ++i;
+        cout << endl; //Formatting.
+        ++i; //Moves the program towards the end and helps stop it from being infinite.
     };
-    cout << endl;
-    int index = 9;
-    while (index >= 0)
+    cout << endl; //Spacing.
+    int index = 9; //Sets the start of the loop.
+    while (index >= 0) //Sets the end of the loop.
     {
-        for (int count = index; count >= 0; count--)
+        //Runs a number of times based on the initial condition.
+        for (int count = index; count >= 0; count--) //Counts down so the size of each rows decreases.
         {
-            cout << "+";
+            cout << "+"; //Writes one pip every time.
         };
         cout << endl;
-        --index;
+        --index; //Moves the program towards the end.
     };
     return 0;
 }
