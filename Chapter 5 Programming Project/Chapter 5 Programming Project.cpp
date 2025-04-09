@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     int counter = 0;
-    int interval;
+    int interval, number;
     string filename, lineA, lineB, lineC, finalName;
     cout << "Please enter the name of the file with your town's population ";
     cin >> filename;
@@ -19,25 +19,11 @@ int main()
         cerr << "Error opening file!" << endl;
         return 1;
     }
-    if (inFile.peek() != EOF) {
-        getline(inFile, lineA);
-        getline(inFile, lineB);
-        counter += 2; //Because the program reads twice, counter needs to update by two.
-        if (lineA < lineB)
-        {
-            finalName = lineB;
-        }
-        else {
-            finalName = lineA;
-        };
-    };
-    while (inFile.peek() != EOF)
-    {
-        getline(inFile, lineC);
-        if (lineC < finalName) {
-            finalName = lineC;
-        };
-        counter += 1;
+    while (inFile.peek() != EOF) {
+        if (inFile >> number) {
+            number = number / 1000;
+            for (int i = 0, i )
+       }
     };
     cout << "There are " << counter << " children in the class" << endl;
     cout << finalName << " is the last kid in line." << endl;
