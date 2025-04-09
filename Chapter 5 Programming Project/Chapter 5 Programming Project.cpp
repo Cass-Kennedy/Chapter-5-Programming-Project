@@ -1,7 +1,6 @@
 // This program is a rudimentary way to calculate the expected population after a certain number of days.
 
 #include <iostream>
-#include <iomanip>
 using namespace std;
 int main()
 {
