@@ -1,29 +1,30 @@
 // This program is meant to display a couple of certain patterns.
 
 #include <iostream>
+#include <random>
 using namespace std;
 int main()
 {   
-    int i = 0;
-    while (i <= 9) 
+    int targetNumber, guessNumber;
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(0, 9999);
+    targetNumber = dist(gen);
+    cout << "Please guess a number! It will be an interger below 10,000." << endl;
+    cin >> guessNumber;
+    while (targetNumber != guessNumber) 
     {
-        for (int counter = 0; counter <= i; counter++)
-        {
-            cout << "+";
+        if (targetNumber > guessNumber) {
+            cout << "That's too low! Try again!" << endl;
+            cin >> guessNumber;
         };
-        cout << endl;
-        ++i;
-    };
-    cout << endl;
-    int index = 9;
-    while (index >= 0)
-    {
-        for (int count = index; count >= 0; count--)
-        {
-            cout << "+";
+        if (targetNumber < guessNumber) {
+            cout << "That's too high! Try again!" << endl;
+            cin >> guessNumber;
         };
-        cout << endl;
-        --index;
     };
+    if (targetNumber == guessNumber) {
+        cout << "Congratulations! You found the number!";
+    }
     return 0;
 }
