@@ -10,7 +10,7 @@ int main()
     string filename, lineA, lineB, lineC, firstName, finalName;
     filename = "Lineup.txt";
     ifstream inFile(filename);
-    if (inFile)
+    if (inFile) //Error message in case it can't open.
     {
         cerr << "Error opening file!" << endl;
         return 1;
