@@ -7,8 +7,12 @@ using namespace std;
 int main()
 {
     int counter = 0;
+    int interval;
     string filename, lineA, lineB, finalName;
-    filename = "C:\\Users\\aidan\\Downloads\\LineUp.txt";
+    cout << "Please enter the name of the file with your town's population ";
+    cin >> filename;
+    cout << "Please enter the interval between the measurements ";
+    cin >> interval;
     ifstream inFile(filename);
     if (!inFile)
     {
