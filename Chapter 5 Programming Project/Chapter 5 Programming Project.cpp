@@ -28,7 +28,11 @@ int main()
         };
     while (inFile.peek() != EOF)
     {
-        
+        getline(inFile, lineC);
+        if (lineC < finalName) {
+            finalName = lineC;
+        };
+        counter += 1;
     };
     cout << "There are " << counter << " children in the class" << endl;
     cout << finalName << " is the last kid in line." << endl;
