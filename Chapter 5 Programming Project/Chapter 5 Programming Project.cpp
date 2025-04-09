@@ -8,7 +8,7 @@ int main()
 {
     int counter = 0; //Starts the number of students.
     string filename, lineA, lineB, lineC, firstName, finalName; //Sets up the necessary strings.
-    filename = "Lineup.txt"; //Sets the file to read.
+    filename = "LineUp.txt"; //Sets the file to read.
     ifstream inFile(filename); //Opens the file to read.
     if (!inFile) //Error message in case it can't open.
     {
