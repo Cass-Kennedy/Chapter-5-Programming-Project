@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     int counter = 0;
-    string filename, lineA, lineB, finalName;
+    string filename, lineA, lineB, lineC, finalName;
     filename = "Lineup.txt";
     ifstream inFile(filename);
     if (inFile)
@@ -15,11 +15,10 @@ int main()
         cerr << "Error opening file!" << endl;
         return 1;
     }
-    while (inFile.peek() != EOF)
-    {
+    if (inFile.peek() != EOF) {
         getline(inFile, lineA);
         getline(inFile, lineB);
-        counter+=2; //Because the program reads twice, counter needs to update by two.
+        counter += 2; //Because the program reads twice, counter needs to update by two.
         if (lineA < lineB)
         {
             finalName = lineB;
@@ -27,6 +26,9 @@ int main()
         else {
             finalName = lineA;
         };
+    while (inFile.peek() != EOF)
+    {
+        
     };
     cout << "There are " << counter << " children in the class" << endl;
     cout << finalName << " is the last kid in line." << endl;
