@@ -1,8 +1,6 @@
 // This program is meant to display a couple of certain patterns.
 
 #include <iostream>
-#include <iomanip>
-#include <cmath>
 using namespace std;
 int main()
 {   
@@ -16,16 +14,16 @@ int main()
         cout << endl;
         ++i;
     };
-
+    cout << endl;
     int index = 9;
-    while (index <= 0)
+    while (index >= 0)
     {
-        for (int count = 1; count >= 0; count--)
+        for (int count = index; count >= 0; count--)
         {
             cout << "+";
         };
         cout << endl;
-        --i;
+        --index;
     };
     return 0;
 }
