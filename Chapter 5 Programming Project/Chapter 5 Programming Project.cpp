@@ -8,7 +8,7 @@ int main()
 {
     int counter = 0;
     int interval;
-    string filename, lineA, lineB, finalName;
+    string filename, lineA, lineB, lineC, finalName;
     cout << "Please enter the name of the file with your town's population ";
     cin >> filename;
     cout << "Please enter the interval between the measurements ";
@@ -19,11 +19,10 @@ int main()
         cerr << "Error opening file!" << endl;
         return 1;
     }
-    while (inFile.peek() != EOF)
-    {
+    if (inFile.peek() != EOF) {
         getline(inFile, lineA);
         getline(inFile, lineB);
-        counter+=2; //Because the program reads twice, counter needs to update by two.
+        counter += 2; //Because the program reads twice, counter needs to update by two.
         if (lineA < lineB)
         {
             finalName = lineB;
@@ -31,6 +30,14 @@ int main()
         else {
             finalName = lineA;
         };
+    };
+    while (inFile.peek() != EOF)
+    {
+        getline(inFile, lineC);
+        if (lineC < finalName) {
+            finalName = lineC;
+        };
+        counter += 1;
     };
     cout << "There are " << counter << " children in the class" << endl;
     cout << finalName << " is the last kid in line." << endl;
