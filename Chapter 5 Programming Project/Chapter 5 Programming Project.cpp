@@ -8,9 +8,9 @@ int main()
 {
     int counter = 0;
     string filename, lineA, lineB, finalName;
-    filename = "C:\\Users\\aidan\\Downloads\\LineUp.txt";
+    filename = "Lineup.txt";
     ifstream inFile(filename);
-    if (!inFile)
+    if (inFile)
     {
         cerr << "Error opening file!" << endl;
         return 1;
