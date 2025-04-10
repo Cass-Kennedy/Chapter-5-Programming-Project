@@ -21,6 +21,7 @@ int main()
         cerr << "Error opening file!" << endl;
         return 1;
     }
+    cout << "Your Town's Population Growth. (Each star represent 1000 people)" << endl;
     while (inFile.peek() != EOF) {
         if (inFile >> number) //Sets up a way to read the numbers in the file.
         {
