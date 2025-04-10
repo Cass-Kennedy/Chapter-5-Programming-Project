@@ -22,10 +22,10 @@ int main()
         return 1;
     }
     while (inFile.peek() != EOF) {
-        if (inFile.peek() != EOF) { cout << startingYear << ": "; }; // Displays the year for each line.
         if (inFile >> number) //Sets up a way to read the numbers in the file.
         {
             number = number / 1000; //Converts the number in the file to the number of stars there should be.
+            if (inFile.peek() != EOF) { cout << startingYear << ": "; }; // Displays the year for each line.
             for (int i = 0; i <= number; i++) {
                 cout << "*";
             }; //Displays the stars.
